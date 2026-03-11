@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Amna Naveed – Data Analyst & Machine Learning Engineer portfolio website." />
+  <title>Amna Naveed | Data Analyst &amp; ML Engineer</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Three.js via CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ========== LOADING SCREEN ========== -->
+  <div id="loading-screen" aria-label="Loading">
+    <div class="loader-content">
+      <div class="loader-spinner"></div>
+      <p class="loader-text">Initializing 3D Environment…</p>
+    </div>
+  </div>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-brand">
+      <span class="brand-initials">AN</span>
+      <span class="brand-name">Amna Naveed</span>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks" role="list">
+      <li><a href="#hero"     class="nav-link" data-section="hero">Home</a></li>
+      <li><a href="#about"    class="nav-link" data-section="about">About</a></li>
+      <li><a href="#skills"   class="nav-link" data-section="skills">Skills</a></li>
+      <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+      <li><a href="#timeline" class="nav-link" data-section="timeline">Experience</a></li>
+      <li><a href="#contact"  class="nav-link" data-section="contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ========== HERO SECTION ========== -->
+  <section id="hero" class="section hero-section" aria-label="Hero">
+    <!-- Three.js canvas injected here by three-scene.js -->
+    <canvas id="heroCanvas" aria-hidden="true"></canvas>
+
+    <div class="hero-content" data-aos="fade-up">
+      <div class="hero-badge">
+        <i class="fas fa-chart-line" aria-hidden="true"></i>
+        Available for Work
+      </div>
+      <h1 class="hero-name">
+        <span class="name-line">Amna</span>
+        <span class="name-line accent">Naveed</span>
+      </h1>
+      <p class="hero-tagline">
+        <span id="typingText" aria-live="polite"></span>
+        <span class="cursor" aria-hidden="true">|</span>
+      </p>
+      <p class="hero-description">
+        Transforming raw data into meaningful insights and building intelligent machine learning solutions that drive real-world impact.
+      </p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">
+          <i class="fas fa-briefcase" aria-hidden="true"></i> View My Work
+        </a>
+        <a href="#contact" class="btn btn-outline">
+          <i class="fas fa-envelope" aria-hidden="true"></i> Contact Me
+        </a>
+      </div>
+      <div class="hero-scroll-hint" aria-hidden="true">
+        <span>Scroll Down</span>
+        <div class="scroll-arrow"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT SECTION ========== -->
+  <section id="about" class="section about-section" aria-label="About Me">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-label">Who Am I</span>
+        <h2 class="section-title">About <span class="accent">Me</span></h2>
+        <p class="section-subtitle">Passionate data professional dedicated to uncovering insights and building smart models.</p>
+      </div>
+
+      <div class="about-grid">
+        <!-- Avatar / Photo -->
+        <div class="about-avatar-col" data-aos="fade-right">
+          <div class="avatar-frame tilt-card">
+            <div class="avatar-inner tilt-card-inner">
+              <div class="avatar-circle">
+                <i class="fas fa-user-astronaut fa-4x" aria-hidden="true"></i>
+              </div>
+              <div class="avatar-ring ring-1" aria-hidden="true"></div>
+              <div class="avatar-ring ring-2" aria-hidden="true"></div>
+              <div class="avatar-ring ring-3" aria-hidden="true"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bio Text -->
+        <div class="about-bio-col" data-aos="fade-left">
+          <h3 class="about-heading">Hi, I'm Amna 👋</h3>
+          <p class="about-bio">
+            I'm a dedicated <strong>Data Analyst</strong> and <strong>Machine Learning Engineer</strong> with a passion for turning complex data into actionable insights. I specialize in building end-to-end ML pipelines, crafting interactive dashboards, and applying statistical techniques to solve real business problems.
+          </p>
+          <p class="about-bio">
+            From exploratory data analysis and feature engineering to deploying production-grade models, I combine technical rigour with creative problem-solving to deliver impactful results.
+          </p>
+
+          <!-- Stats -->
+          <div class="about-stats" role="list">
+            <div class="stat-card tilt-card" role="listitem" data-aos="zoom-in" data-aos-delay="100">
+              <div class="tilt-card-inner">
+                <span class="stat-number counter" data-target="10">0</span><span class="stat-suffix">+</span>
+                <span class="stat-label">Projects<br>Completed</span>
+              </div>
+            </div>
+            <div class="stat-card tilt-card" role="listitem" data-aos="zoom-in" data-aos-delay="200">
+              <div class="tilt-card-inner">
+                <span class="stat-number counter" data-target="5">0</span><span class="stat-suffix">+</span>
+                <span class="stat-label">ML Models<br>Deployed</span>
+              </div>
+            </div>
+            <div class="stat-card tilt-card" role="listitem" data-aos="zoom-in" data-aos-delay="300">
+              <div class="tilt-card-inner">
+                <span class="stat-number counter" data-target="3">0</span><span class="stat-suffix">+</span>
+                <span class="stat-label">Years<br>Experience</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SKILLS SECTION ========== -->
+  <section id="skills" class="section skills-section" aria-label="Skills">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-label">What I Know</span>
+        <h2 class="section-title">My <span class="accent">Skills</span></h2>
+        <p class="section-subtitle">A curated set of tools and technologies I use to solve data challenges.</p>
+      </div>
+
+      <div class="skills-grid">
+        <!-- Data Analysis Skills -->
+        <div class="skills-category" data-aos="fade-right">
+          <div class="category-header">
+            <i class="fas fa-chart-bar" aria-hidden="true"></i>
+            <h3>Data Analysis</h3>
+          </div>
+          <div class="skill-bars">
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="50">
+              <div class="skill-info">
+                <span class="skill-name">Python</span>
+                <span class="skill-percent">95%</span>
+              </div>
+              <div class="skill-bar-track" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" aria-label="Python proficiency 95%">
+                <div class="skill-bar-fill" data-width="95"></div>
+              </div>
+            </div>
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="100">
+              <div class="skill-info"><span class="skill-name">Pandas / NumPy</span><span class="skill-percent">92%</span></div>
+              <div class="skill-bar-track" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100" aria-label="Pandas/NumPy proficiency 92%">
+                <div class="skill-bar-fill" data-width="92"></div>
+              </div>
+            </div>
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="150">
+              <div class="skill-info"><span class="skill-name">SQL</span><span class="skill-percent">90%</span></div>
+              <div class="skill-bar-track" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-label="SQL proficiency 90%">
+                <div class="skill-bar-fill" data-width="90"></div>
+              </div>
+            </div>
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="200">
+              <div class="skill-info"><span class="skill-name">Tableau / Power BI</span><span class="skill-percent">85%</span></div>
+              <div class="skill-bar-track" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="Tableau/Power BI proficiency 85%">
+                <div class="skill-bar-fill" data-width="85"></div>
+              </div>
+            </div>
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="250">
+              <div class="skill-info"><span class="skill-name">Excel &amp; Data Cleaning</span><span class="skill-percent">88%</span></div>
+              <div class="skill-bar-track" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" aria-label="Excel proficiency 88%">
+                <div class="skill-bar-fill" data-width="88"></div>
+              </div>
+            </div>
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="300">
+              <div class="skill-info"><span class="skill-name">Statistical Analysis / EDA</span><span class="skill-percent">90%</span></div>
+              <div class="skill-bar-track" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-label="Statistical Analysis proficiency 90%">
+                <div class="skill-bar-fill" data-width="90"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ML Skills -->
+        <div class="skills-category" data-aos="fade-left">
+          <div class="category-header">
+            <i class="fas fa-brain" aria-hidden="true"></i>
+            <h3>Machine Learning</h3>
+          </div>
+          <div class="skill-bars">
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="50">
+              <div class="skill-info"><span class="skill-name">Scikit-learn</span><span class="skill-percent">93%</span></div>
+              <div class="skill-bar-track" role="progressbar" aria-valuenow="93" aria-valuemin="0" aria-valuemax="100" aria-label="Scikit-learn proficiency 93%">
+                <div class="skill-bar-fill" data-width="93"></div>
+              </div>
+            </div>
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="100">
+              <div class="skill-info"><span class="skill-name">TensorFlow / Keras</span><span class="skill-percent">85%</span></div>
+              <div class="skill-bar-track" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="TensorFlow/Keras proficiency 85%">
+                <div class="skill-bar-fill" data-width="85"></div>
+              </div>
+            </div>
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="150">
+              <div class="skill-info"><span class="skill-name">NLP</span><span class="skill-percent">82%</span></div>
+              <div class="skill-bar-track" role="progressbar" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100" aria-label="NLP proficiency 82%">
+                <div class="skill-bar-fill" data-width="82"></div>
+              </div>
+            </div>
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="200">
+              <div class="skill-info"><span class="skill-name">Deep Learning</span><span class="skill-percent">80%</span></div>
+              <div class="skill-bar-track" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" aria-label="Deep Learning proficiency 80%">
+                <div class="skill-bar-fill" data-width="80"></div>
+              </div>
+            </div>
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="250">
+              <div class="skill-info"><span class="skill-name">Classification / Regression</span><span class="skill-percent">90%</span></div>
+              <div class="skill-bar-track" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-label="Classification/Regression proficiency 90%">
+                <div class="skill-bar-fill" data-width="90"></div>
+              </div>
+            </div>
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="300">
+              <div class="skill-info"><span class="skill-name">Feature Engineering</span><span class="skill-percent">88%</span></div>
+              <div class="skill-bar-track" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" aria-label="Feature Engineering proficiency 88%">
+                <div class="skill-bar-fill" data-width="88"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill Tags -->
+      <div class="skill-tags-section" data-aos="fade-up">
+        <h3 class="tags-heading">Technologies &amp; Tools</h3>
+        <div class="skill-tags" role="list">
+          <span class="skill-tag" role="listitem">Python</span>
+          <span class="skill-tag" role="listitem">Pandas</span>
+          <span class="skill-tag" role="listitem">NumPy</span>
+          <span class="skill-tag" role="listitem">SQL</span>
+          <span class="skill-tag" role="listitem">Excel</span>
+          <span class="skill-tag" role="listitem">Tableau</span>
+          <span class="skill-tag" role="listitem">Power BI</span>
+          <span class="skill-tag" role="listitem">Scikit-learn</span>
+          <span class="skill-tag" role="listitem">TensorFlow</span>
+          <span class="skill-tag" role="listitem">Keras</span>
+          <span class="skill-tag" role="listitem">NLP</span>
+          <span class="skill-tag" role="listitem">Deep Learning</span>
+          <span class="skill-tag" role="listitem">Matplotlib</span>
+          <span class="skill-tag" role="listitem">Seaborn</span>
+          <span class="skill-tag" role="listitem">Git</span>
+          <span class="skill-tag" role="listitem">Jupyter</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROJECTS SECTION ========== -->
+  <section id="projects" class="section projects-section" aria-label="Projects">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-label">What I've Built</span>
+        <h2 class="section-title">Featured <span class="accent">Projects</span></h2>
+        <p class="section-subtitle">A selection of data science and machine learning projects I've worked on.</p>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- Project 1 -->
+        <article class="project-card flip-card" data-aos="zoom-in" data-aos-delay="50">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="project-icon">
+                <i class="fas fa-users" aria-hidden="true"></i>
+              </div>
+              <h3 class="project-title">Customer Churn Prediction</h3>
+              <p class="project-description">ML classification model to predict customer churn with high accuracy, enabling proactive retention strategies.</p>
+              <div class="project-tags" role="list">
+                <span class="project-tag" role="listitem">Python</span>
+                <span class="project-tag" role="listitem">Scikit-learn</span>
+                <span class="project-tag" role="listitem">XGBoost</span>
+                <span class="project-tag" role="listitem">EDA</span>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h3 class="project-title">Customer Churn Prediction</h3>
+              <ul class="project-details">
+                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Built an end-to-end classification pipeline</li>
+                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Achieved 92% accuracy on test set</li>
+                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Feature importance analysis with SHAP</li>
+                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Deployed as REST API endpoint</li>
+              </ul>
+              <a href="https://github.com/AmnaNaveed189" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                <i class="fab fa-github" aria-hidden="true"></i> View Project
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card flip-card" data-aos="zoom-in" data-aos-delay="150">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="project-icon">
+                <i class="fas fa-chart-pie" aria-hidden="true"></i>
+              </div>
+              <h3 class="project-title">Sales Dashboard</h3>
+              <p class="project-description">Interactive Tableau/Power BI dashboard delivering real-time sales analytics and KPI tracking for business stakeholders.</p>
+              <div class="project-tags" role="list">
+                <span class="project-tag" role="listitem">Tableau</span>
+                <span class="project-tag" role="listitem">Power BI</span>
+                <span class="project-tag" role="listitem">SQL</span>
+                <span class="project-tag" role="listitem">DAX</span>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h3 class="project-title">Sales Dashboard</h3>
+              <ul class="project-details">
+                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Connected to live data sources via SQL</li>
+                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Drilldown KPIs and trend analysis</li>
+                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Custom DAX measures for forecasting</li>
+                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Reduced reporting time by 60%</li>
+              </ul>
+              <a href="https://github.com/AmnaNaveed189" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                <i class="fab fa-github" aria-hidden="true"></i> View Project
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-card flip-card" data-aos="zoom-in" data-aos-delay="250">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="project-icon">
+                <i class="fas fa-comments" aria-hidden="true"></i>
+              </div>
+              <h3 class="project-title">Sentiment Analysis</h3>
+              <p class="project-description">NLP project that analyzes social media sentiment using transformer models to extract brand perception insights.</p>
+              <div class="project-tags" role="list">
+                <span class="project-tag" role="listitem">Python</span>
+                <span class="project-tag" role="listitem">NLP</span>
+                <span class="project-tag" role="listitem">BERT</span>
+                <span class="project-tag" role="listitem">Transformers</span>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h3 class="project-title">Sentiment Analysis</h3>
+              <ul class="project-details">
+                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Fine-tuned BERT for sentiment tasks</li>
+                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Scraped &amp; processed 50k+ tweets</li>
+                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Real-time classification API</li>
+                <li><i class="fas fa-check-circle" aria-hidden="true"></i> 89% F1-score on benchmark dataset</li>
+              </ul>
+              <a href="https://github.com/AmnaNaveed189" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                <i class="fab fa-github" aria-hidden="true"></i> View Project
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 4 -->
+        <article class="project-card flip-card" data-aos="zoom-in" data-aos-delay="350">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="project-icon">
+                <i class="fas fa-home" aria-hidden="true"></i>
+              </div>
+              <h3 class="project-title">House Price Prediction</h3>
+              <p class="project-description">Regression model with extensive feature engineering to accurately predict housing prices from multi-dimensional datasets.</p>
+              <div class="project-tags" role="list">
+                <span class="project-tag" role="listitem">Python</span>
+                <span class="project-tag" role="listitem">Regression</span>
+                <span class="project-tag" role="listitem">Feature Eng.</span>
+                <span class="project-tag" role="listitem">LightGBM</span>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h3 class="project-title">House Price Prediction</h3>
+              <ul class="project-details">
+                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Advanced feature engineering pipeline</li>
+                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Ensembled LightGBM + Ridge models</li>
+                <li><i class="fas fa-check-circle" aria-hidden="true"></i> RMSE of 0.112 on Kaggle leaderboard</li>
+                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Comprehensive EDA with 80+ features</li>
+              </ul>
+              <a href="https://github.com/AmnaNaveed189" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                <i class="fab fa-github" aria-hidden="true"></i> View Project
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TIMELINE SECTION ========== -->
+  <section id="timeline" class="section timeline-section" aria-label="Experience and Education">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-label">My Journey</span>
+        <h2 class="section-title">Experience &amp; <span class="accent">Education</span></h2>
+        <p class="section-subtitle">Milestones that have shaped my professional and academic path.</p>
+      </div>
+
+      <div class="timeline" role="list">
+
+        <div class="timeline-item" data-aos="fade-right" role="listitem">
+          <div class="timeline-marker" aria-hidden="true">
+            <i class="fas fa-briefcase"></i>
+          </div>
+          <div class="timeline-content">
+            <span class="timeline-date">2024 – Present</span>
+            <h3 class="timeline-title">Data Analyst</h3>
+            <p class="timeline-org">Tech Solutions Inc.</p>
+            <p class="timeline-desc">Leading data analysis initiatives, building interactive dashboards, and delivering actionable insights to drive business strategy. Spearheaded a customer segmentation project that increased revenue by 15%.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item right" data-aos="fade-left" role="listitem">
+          <div class="timeline-marker" aria-hidden="true">
+            <i class="fas fa-robot"></i>
+          </div>
+          <div class="timeline-content">
+            <span class="timeline-date">2023 – 2024</span>
+            <h3 class="timeline-title">ML Engineer Intern</h3>
+            <p class="timeline-org">DataMinds Lab</p>
+            <p class="timeline-desc">Developed and deployed machine learning models for production use cases including fraud detection and recommendation systems. Reduced model inference latency by 40% through optimization techniques.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-aos="fade-right" role="listitem">
+          <div class="timeline-marker" aria-hidden="true">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <div class="timeline-content">
+            <span class="timeline-date">2019 – 2023</span>
+            <h3 class="timeline-title">BS Computer Science</h3>
+            <p class="timeline-org">University of Engineering &amp; Technology</p>
+            <p class="timeline-desc">Graduated with distinction. Specialised in Artificial Intelligence and Data Science. Final-year thesis on "Deep Learning for Time-Series Anomaly Detection" achieved highest departmental grade.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item right" data-aos="fade-left" role="listitem">
+          <div class="timeline-marker" aria-hidden="true">
+            <i class="fas fa-award"></i>
+          </div>
+          <div class="timeline-content">
+            <span class="timeline-date">2022</span>
+            <h3 class="timeline-title">Google Data Analytics Certificate</h3>
+            <p class="timeline-org">Google / Coursera</p>
+            <p class="timeline-desc">Completed the professional certificate covering data cleaning, analysis, visualisation, and storytelling with data using SQL, R, and Tableau.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-aos="fade-right" role="listitem">
+          <div class="timeline-marker" aria-hidden="true">
+            <i class="fas fa-certificate"></i>
+          </div>
+          <div class="timeline-content">
+            <span class="timeline-date">2021</span>
+            <h3 class="timeline-title">TensorFlow Developer Certificate</h3>
+            <p class="timeline-org">Google / TensorFlow</p>
+            <p class="timeline-desc">Earned the TensorFlow Developer Certificate, demonstrating proficiency in building and deploying deep learning models for computer vision, NLP, and time-series tasks.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT SECTION ========== -->
+  <section id="contact" class="section contact-section" aria-label="Contact">
+    <canvas id="contactCanvas" aria-hidden="true"></canvas>
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-label">Get In Touch</span>
+        <h2 class="section-title">Contact <span class="accent">Me</span></h2>
+        <p class="section-subtitle">Have a project in mind or just want to chat? I'd love to hear from you.</p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Contact Info -->
+        <div class="contact-info" data-aos="fade-right">
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-envelope" aria-hidden="true"></i></div>
+            <div class="contact-text">
+              <h4>Email</h4>
+              <a href="mailto:amna@example.com">amna@example.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></div>
+            <div class="contact-text">
+              <h4>Location</h4>
+              <p>Pakistan</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-clock" aria-hidden="true"></i></div>
+            <div class="contact-text">
+              <h4>Availability</h4>
+              <p>Open to Opportunities</p>
+            </div>
+          </div>
+
+          <!-- Social Links -->
+          <div class="social-links" aria-label="Social media links">
+            <a href="https://github.com/AmnaNaveed189" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub profile">
+              <i class="fab fa-github" aria-hidden="true"></i>
+            </a>
+            <a href="https://linkedin.com/in/amnanaveed" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn profile">
+              <i class="fab fa-linkedin" aria-hidden="true"></i>
+            </a>
+            <a href="mailto:amna@example.com" class="social-link" aria-label="Send email">
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <form class="contact-form" id="contactForm" data-aos="fade-left" novalidate aria-label="Contact form">
+          <div class="form-group">
+            <label for="contactName" class="form-label">Name</label>
+            <input type="text" id="contactName" name="name" class="form-input" placeholder="Your full name" required autocomplete="name" />
+          </div>
+          <div class="form-group">
+            <label for="contactEmail" class="form-label">Email</label>
+            <input type="email" id="contactEmail" name="email" class="form-input" placeholder="your@email.com" required autocomplete="email" />
+          </div>
+          <div class="form-group">
+            <label for="contactMessage" class="form-label">Message</label>
+            <textarea id="contactMessage" name="message" class="form-textarea" placeholder="Tell me about your project…" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">
+            <i class="fas fa-paper-plane" aria-hidden="true"></i> Send Message
+          </button>
+          <p class="form-status" id="formStatus" role="alert" aria-live="assertive"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="brand-initials">AN</span>
+          <span class="brand-name">Amna Naveed</span>
+          <p class="footer-tagline">Data Analyst &amp; Machine Learning Engineer</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <ul role="list">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#timeline">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="footer-social" aria-label="Social links">
+          <a href="https://github.com/AmnaNaveed189" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <i class="fab fa-github" aria-hidden="true"></i>
+          </a>
+          <a href="https://linkedin.com/in/amnanaveed" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <i class="fab fa-linkedin" aria-hidden="true"></i>
+          </a>
+          <a href="mailto:amna@example.com" aria-label="Email">
+            <i class="fas fa-envelope" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Amna Naveed. All Rights Reserved.</p>
+        <p>Built with <i class="fas fa-heart" aria-hidden="true"></i> &amp; Three.js</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== SCRIPTS ========== -->
+  <script src="js/three-scene.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
